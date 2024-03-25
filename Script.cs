@@ -1,15 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class Script : MonoBehaviour
 {
-    public int playerHealth
+    public int playerHealth;
     Rigidbody2D rb;
+    Vector2 Vector; 
+    float x_speed;
+    float y_speed;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D;
+        rb = GetComponent<Rigidbody2D>();
+         x_speed = 2f;
+         y_speed = 3f;
+
         
     }
 
@@ -28,6 +30,8 @@ public class Script : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        Debug.Log("Update time :" + Time.deltaTime);
+        Vector = new Vector2(x_speed,y_speed);
+        Debug.Log(Vector);
     }
 }
